@@ -14,7 +14,7 @@ Here is a link to the deployed webpage: []
 
 
 ## Programs
-HTML, CSS, Javascript, React, MongoDB, Mongoose, Express.js, JSON
+HTML, CSS, Javascript, React, MongoDB, Mongoose, Node.js, Express.js, JSON
 
 ## License 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)

@@ -5,8 +5,8 @@ module.exports = {
 
     // Make Api Call
     apiCall: (req, res) => {
-        axios.get("https://www.googleapis.com/books/v1/volumes?q=flowers")
-            .then((response) => res.json(response.data))
+        axios.get("https://www.googleapis.com/books/v1/volumes?q=" + req.params.title)
+            .then((response) => res.json(response.data.items))
             .catch(err => res.status(422).json(err))
     },
 
@@ -45,9 +45,8 @@ module.exports = {
     // Remove a Book From Database
     remove: (req, res) => {
         db.Book
-            .findById({ _id: req.params.id })
-            .then(dbModel => dbModel.remove())
-            .then(dbModel => res.json(dbmodel))
+            .deleteOne({ _id: req.params.id })
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },
 };

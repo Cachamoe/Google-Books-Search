@@ -11,4 +11,8 @@ router.route("/books/:id")
     .put(controller.update)
     .delete(controller.remove)
 
+router.route("/googlebooks/:title")
+    .get(controller.apiCall)
+
+
 module.exports = router;
