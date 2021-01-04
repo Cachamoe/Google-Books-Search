@@ -2,12 +2,16 @@
 import React, { useEffect } from "react";
 import "./style.css";
 import { Card, CardItem } from "../components/Card";
+import { SearchBar } from "../components/Search";
 
 function Search() {
     return (
+        <>
+        <SearchBar />
         <Card >
             <CardItem />
         </Card>
+        </>
     )
 }
 
