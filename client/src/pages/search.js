@@ -30,17 +30,16 @@ class Search extends Component {
 
                     results = results.map(result => {
                         result = {
-                            key: result.id,
                             id: result.id,
                             title: result.title,
                             author: result.authors,
                             description: result.description,
-                            image: result.thumbnail,
-                            link: result.infoLink
+                            image: result.image,
+                            link: result.link
                         }
                         return result;
                     })
-                    this.setState({ books: results, error: "" })
+                    this.setState({ books: results })
                 }
             })
             .catch(err => this.setState({ error: err.items }));
