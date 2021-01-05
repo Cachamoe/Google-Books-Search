@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import "./style.css";
 import { Card } from "../components/Card";
-import { SearchBar } from "../components/Search";
-import { CardItemSearched } from "../components/SearchedBooks";
+import SearchBar from "../components/Search";
+import CardItemSearched from "../components/SearchedBooks";
 
 class Search extends Component {
     state = {
@@ -17,7 +17,7 @@ class Search extends Component {
         this.setState({ search: event.target.value })
     }
 
-    handleFormSubmit = event => {
+    hand = event => {
         event.preventDefault();
 
         API.APICall(this.state.search)
