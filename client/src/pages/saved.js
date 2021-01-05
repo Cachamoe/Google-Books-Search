@@ -2,8 +2,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import "./style.css"
-import { Card, CardItem } from "../components/Card";
-
+import { Card } from "../components/Card";
+import { CardItemSaved } from "../components/SavedBooks";
 
 class Save extends Component {
     state = {
@@ -25,7 +25,7 @@ class Save extends Component {
     render() {
         return (
             <Card >
-                <CardItem savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+                <CardItemSaved savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
             </Card>
         )
     }

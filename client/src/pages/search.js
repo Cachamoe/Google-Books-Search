@@ -2,9 +2,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import "./style.css";
-import { Card, CardItem } from "../components/Card";
+import { Card } from "../components/Card";
 import { SearchBar } from "../components/Search";
-
+import { CardItemSearched } from "../components/SearchedBooks";
 
 class Search extends Component {
     state = {
@@ -64,7 +64,7 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                 />
                 <Card >
-                    <CardItem books={this.state.books} handleSavedButton={this.handleSavedButton} />
+                    <CardItemSearched books={this.state.books} handleSavedButton={this.handleSavedButton} />
                 </Card>
             </>
         )
