@@ -6,31 +6,42 @@ export function CardItemSearched(props) {
     return (
         <div className="card">
             <div className="card-body">
-                <div className="row">
-                    <div className="col-md-10">
-                        <h3>{props.title}</h3>
-                        <h4>Written By: {props.authors}</h4>
-                    </div>
-                    <div className="col-md-2">
-                        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button className="btn btn-secondary me-md-2 button" type="button">
-                                View
-                </button>
-                            <button className="btn btn-secondary" type="button">
-                                Save
-                </button>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-3">
-                        <img src={props.image}></img>
-                    </div>
-                    <div className="col-md-9">
-                        <p>{props.description}</p>
-                    </div>
-                </div>
+                {props.books.map(book => {
+                    return (
+                        <li className="search-list list-group-item">
+                            <div className="row">
+                                <div className="col-md-10">
+                                    <h3>{book.title}</h3>
+                                    <h4>Written By: {book.authors}</h4>
+                                </div>
+                                <div className="col-md-2">
+                                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a href={book.link} target="_blank">
+                                            <button className="viewBook btn btn-success">
+                                                View Book
+                                            </button>
+                                        </a>
+                                        <button className="btn btn-secondary" type="button" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-md-3">
+                                    <img src={book.image} alt={book.title}></img>
+                                </div>
+                                <div className="col-md-9">
+                                    <p>{book.description}</p>
+                                </div>
+                            </div>
+                        </li>
+                    );
+                })}
             </div>
         </div>
     );
 }
+
+export default CardItemSearched;
+
