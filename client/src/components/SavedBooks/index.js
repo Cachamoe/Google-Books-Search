@@ -8,7 +8,7 @@ const CardItemSaved = props => {
             <div className="card-body">
                 {props.savedBooks.map(book => {
                     return (
-                        <li className="saved-list list-group-item" id={book.title} key={book._id}>
+                        <li className="saved-list list-group-item" key={book._id}>
                             <div className="row">
                                 <div className="col-md-10">
                                     <h3>{book.title}</h3>

@@ -8,7 +8,7 @@ export function CardItemSearched(props) {
             <div className="card-body">
                 {props.books.map(book => {
                     return (
-                        <li className="search-list list-group-item" id={book.title} key={book._id}>
+                        <li className="search-list list-group-item" key={book._id}>
                             <div className="row">
                                 <div className="col-md-10">
                                     <h3>{book.title}</h3>
@@ -21,7 +21,7 @@ export function CardItemSearched(props) {
                                                 View Book
                                             </button>
                                         </a>
-                                        <button className="btn btn-secondary" type="button" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
+                                        <button className="btn btn-primary" type="button" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
                                             Save
                                         </button>
                                     </div>
@@ -44,4 +44,3 @@ export function CardItemSearched(props) {
 }
 
 export default CardItemSearched;
-
