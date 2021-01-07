@@ -17,9 +17,10 @@ class Search extends Component {
         this.setState({ search: event.target.value })
     }
 
-    hand = event => {
+    handleFormSubmit = event => {
         event.preventDefault();
 
+        
         API.APICall(this.state.search)
             .then(res => {
                 if (res.data.items === "error") {
@@ -30,6 +31,7 @@ class Search extends Component {
 
                     results = results.map(result => {
                         result = {
+                            key: result.id,
                             id: result.id,
                             title: result.title,
                             author: result.authors,
@@ -44,6 +46,7 @@ class Search extends Component {
             })
             .catch(err => this.setState({ error: err.items }));
     }
+
 
     handleSavedButton = event => {
         event.preventDefault();

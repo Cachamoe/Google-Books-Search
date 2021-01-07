@@ -8,7 +8,7 @@ export function CardItemSearched(props) {
             <div className="card-body">
                 {props.books.map(book => {
                     return (
-                        <li className="search-list list-group-item">
+                        <li className="search-list list-group-item" id={book.title} key={book._id}>
                             <div className="row">
                                 <div className="col-md-10">
                                     <h3>{book.title}</h3>
