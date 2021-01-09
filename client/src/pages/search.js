@@ -23,21 +23,22 @@ class Search extends Component {
         
         API.APICall(this.state.search)
             .then(res => {
+                console.log(res)
                 if (res.data.items === "error") {
                     throw new Error(res.data.items);
                 }
                 else {
                     let results = res.data.items
-
+            
                     results = results.map(result => {
                         result = {
                             key: result.id,
                             id: result.id,
-                            title: result.title,
-                            author: result.authors,
-                            description: result.description,
-                            image: result.image,
-                            link: result.link
+                            title: result.volumeInfo.title,
+                            author: result.volumeInfo.authors,
+                            description: result.volumeInfo.description,
+                            image: result.volumeInfo.imageLinks.thumbnail,
+                            link: result.volumeInfo.infoLink
                         }
                         return result;
                     })
