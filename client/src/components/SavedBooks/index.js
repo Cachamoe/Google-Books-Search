@@ -21,7 +21,7 @@ const CardItemSaved = props => {
                                                 View Book
                                             </button>
                                         </a>
-                                        <button className="btn btn-secondary me-md-2 button" type="button" id={book._id} onClick={() => props.handleDeleteButton(book._id)}>
+                                        <button className="btn btn-danger" type="button" id={book._id} onClick={() => props.handleDeleteButton(book._id)}>
                                             Delete
                                         </button>
                                     </div>
