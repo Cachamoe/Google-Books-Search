@@ -32,10 +32,8 @@ class Search extends Component {
             
                     results = results.map(result => {
                         result = {
-                            key: result.id,
-                            id: result.id,
                             title: result.volumeInfo.title,
-                            author: result.volumeInfo.authors,
+                            authors: result.volumeInfo.authors,
                             description: result.volumeInfo.description,
                             image: result.volumeInfo.imageLinks.thumbnail,
                             link: result.volumeInfo.infoLink
@@ -49,12 +47,11 @@ class Search extends Component {
     }
 
 
-    handleSavedButton = event => {
-        event.preventDefault();
-
-        let savedBooks = this.state.books.filter(book => book.id === event.target.id)
-        savedBooks = savedBooks[0];
-        API.saveBook(savedBooks)
+    handleSavedButton = book => {
+        API.saveBook(book)
+            .then(function(data) {
+                console.log(data)
+            })
             .catch(err => console.log(err))
     }
 

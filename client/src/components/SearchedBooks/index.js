@@ -6,13 +6,13 @@ export function CardItemSearched(props) {
     return (
         <div className="card">
             <div className="card-body">
-                {props.books.map(book => {
+                {props.books.map((book, index) => {
                     return (
-                        <li className="search-list list-group-item" key={book._id}>
+                        <li key={index} className="search-list list-group-item" key={book._id}>
                             <div className="row">
                                 <div className="col-md-10">
                                     <h3>{book.title}</h3>
-                                    <h4>Written By: {book.authors}</h4>
+                                    <h4>Written By: { book.authors ? book.authors.join(",") : "No Authors"}</h4>
                                 </div>
                                 <div className="col-md-2">
                                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -21,7 +21,7 @@ export function CardItemSearched(props) {
                                                 View Book
                                             </button>
                                         </a>
-                                        <button className="btn btn-primary" type="button" id={book.id} onClick={(event) => props.handleSavedButton(event)}>
+                                        <button className="btn btn-primary" type="button" id={book.id} onClick={() => props.handleSavedButton(book)}>
                                             Save
                                         </button>
                                     </div>
