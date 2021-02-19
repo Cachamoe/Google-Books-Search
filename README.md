@@ -11,7 +11,7 @@ Here is a link to the deployed webpage: [https://evening-basin-64763.herokuapp.c
 3) Update your list by deleting books
 
 
-## Programs
+## Technologies
 HTML, CSS, Javascript, React, MongoDB, Mongoose, Node.js, Express.js, JSON
 
 ## License 
